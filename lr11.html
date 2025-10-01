@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 1. Class Worker
+   /* class Worker {
+        constructor(name, surname, rate, days) {
+            this.name = name;
+            this.surname = surname;
+            this.rate = rate;
+            this.days = days;
+        }
+        getSalary() {
+            return this.rate * this.days;
+        }
+    }
+    
+    var worker = new Worker('Иван', 'Иванов', 10, 31);
+    console.log(worker.name); // Иван
+    console.log(worker.surname); // Иванов
+    console.log(worker.rate); // 10
+    console.log(worker.days); // 31
+    console.log(worker.getSalary()); // 310 
+    
+    // 2. Worker with getters
+    class Worker {
+        constructor(name, surname, rate, days) {
+            var _name = name;
+            var _surname = surname;
+            var _rate = rate;
+            var _days = days;
+            this.getName = function() { return _name; };
+            this.getSurname = function() { return _surname; };
+            this.getRate = function() { return _rate; };
+            this.getDays = function() { return _days; };
+            this.getSalary = function() { return _rate * _days; };
+        }
+    }
+    
+    var worker = new Worker('Иван', 'Иванов', 10, 31);
+    console.log(worker.getName()); // Иван
+    console.log(worker.getSurname()); // Иванов
+    console.log(worker.getRate()); // 10
+    console.log(worker.getDays()); // 31
+    console.log(worker.getSalary()); // 310
+    
+    // 3. Worker with getters and setters
+    class Worker {
+        constructor(name, surname, rate, days) {
+            var _name = name;
+            var _surname = surname;
+            var _rate = rate;
+            var _days = days;
+            this.getName = function() { return _name; };
+            this.getSurname = function() { return _surname; };
+            this.getRate = function() { return _rate; };
+            this.getDays = function() { return _days; };
+            this.setRate = function(rate) { _rate = rate; };
+            this.setDays = function(days) { _days = days; };
+            this.getSalary = function() { return _rate * _days; };
+        }
+    }
+    
+    var worker = new Worker('Иван', 'Иванов', 10, 31);
+    console.log(worker.getRate()); // 10
+    console.log(worker.getDays()); // 31
+    console.log(worker.getSalary()); // 310
+    worker.setRate(20);
+    worker.setDays(10);
+    console.log(worker.getSalary()); // 200
+    
+    // 4. Class MyString
+    class MyString {
+        reverse(str) { return str.split('').reverse().join(''); }
+        ucFirst(str) { return str.charAt(0).toUpperCase() + str.slice(1); }
+        ucWords(str) { return str.replace(/\b\w/g, l => l.toUpperCase()); }
+    }
+    
+    var str = new MyString();
+    console.log(str.reverse('abcde')); // edcba
+    console.log(str.ucFirst('abcde')); // Abcde
+    console.log(str.ucWords('abcde abcde abcde')); // Abcde Abcde Abcde*/
+    
+    // 5. Class Validator (basic implementation)
+    class Validator {
+        isEmail(email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); }
+        isDomain(domain) { return /^[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)+$/.test(domain); }
+        isDate(date) { return /^\d{2}\.\d{2}\.\d{4}$/.test(date); }
+        isPhone(phone) { return /^\+?\d{1,4}[\s-]?\(?\d{2,3}\)?[\s-]?\d{3}[\s-]?\d{2}[\s-]?\d{2}$/.test(phone); }
+    }
+    
+    var validator = new Validator();
+    console.log(validator.isEmail('phphtml@mail.ru')); // true
+    console.log(validator.isDomain('phphtml.net')); // true
+    console.log(validator.isDate('12.05.2020')); // true
+    console.log(validator.isPhone('+375 (29) 817-68-92')); // true 
+    </script>
+</body>
+</html>
